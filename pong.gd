@@ -43,14 +43,15 @@ func _process(delta):
 		direction = Vector2(-1, 0)
 		leftScore += 1
 		print("Blue scored:", leftScore)
+		$BlueScore.text = str(leftScore)
 	
 	if (ball_pos.x < 0):
 		ball_pos = screenSize * 0.5
 		ball_speed = INITIAL_BALL_SPEED
 		direction = Vector2(1, 0)
 		rightScore += 1
-		#still want to add this to the game screen
 		print("Purpel scored:", rightScore)
+		$PinkScore.text = str(rightScore)
 		
 	if(ball_pos.x < 0 or ball_pos.x > screenSize.x):
 		ball_pos = screenSize*0.5
