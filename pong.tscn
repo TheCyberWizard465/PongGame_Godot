@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://fbb0p65u3rgw"]
+
+[ext_resource type="Texture2D" uid="uid://ckwd0dptchvy3" path="res://left_pallete.png" id="1_fmwby"]
+[ext_resource type="Script" path="res://pong.gd" id="1_nm7bq"]
+[ext_resource type="Texture2D" uid="uid://fd1yk2w4pv43" path="res://right_pallete.png" id="2_jk21q"]
+[ext_resource type="Texture2D" uid="uid://cabpkp6scay1c" path="res://separator.png" id="3_02qyw"]
+[ext_resource type="Texture2D" uid="uid://bm1sjkglxurab" path="res://ball.png" id="4_am0bx"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_nm7bq")
+
+[node name="LeftP" type="Sprite2D" parent="."]
+position = Vector2(67, 183)
+texture = ExtResource("1_fmwby")
+
+[node name="RightP" type="Sprite2D" parent="."]
+position = Vector2(577, 187)
+texture = ExtResource("2_jk21q")
+
+[node name="Separator" type="Sprite2D" parent="."]
+position = Vector2(320, 200)
+texture = ExtResource("3_02qyw")
+
+[node name="Ball" type="Sprite2D" parent="."]
+position = Vector2(320, 188)
+texture = ExtResource("4_am0bx")
