@@ -44,14 +44,25 @@ func _process(delta):
 		leftScore += 1
 		print("Blue scored:", leftScore)
 		$BlueScore.text = str(leftScore)
+		if (leftScore > 5):
+			$thount.text = "U suck Pink!"
+			$MessageTimer.start()
+			if ($MessageTimer.time_left == 0):
+				$thount.text = ""
 	
 	if (ball_pos.x < 0):
 		ball_pos = screenSize * 0.5
 		ball_speed = INITIAL_BALL_SPEED
 		direction = Vector2(1, 0)
 		rightScore += 1
-		print("Purpel scored:", rightScore)
+		print("Pink scored:", rightScore)
 		$PinkScore.text = str(rightScore)
+		if (rightScore > 1 ):
+			$thount.text = "U suck Blue!"
+			$MessageTimer.start()	
+			if ($MessageTimer.time_left == 0):
+				$thount.text = ""
+			
 		
 	if(ball_pos.x < 0 or ball_pos.x > screenSize.x):
 		ball_pos = screenSize*0.5
@@ -77,4 +88,3 @@ func _process(delta):
 		right_pos.y += PAD_SPEED * delta
 		
 	get_node("RightP").position = right_pos
-
